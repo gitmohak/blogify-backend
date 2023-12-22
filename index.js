@@ -24,13 +24,8 @@ app.use(cors({
     credentials: true
 }));
 
-//Database Connection
+//Database Connection & Backend Express.js Server
 database();
-
-//Backend Express.js Server
-app.listen(process.env.PORT, () => {
-    console.log(`Server started successfully at port - ${process.env.PORT}`);
-});
 
 //Upload Images
 imageUpload(app);
