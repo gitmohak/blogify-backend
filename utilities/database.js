@@ -1,7 +1,7 @@
 //Database Connection using Mongoose
 import mongoose from "mongoose";
 
-const database = () => {
+const database = (app) => {
     mongoose.connect(process.env.MONGO_URL, {
         dbName: "blogify"
     })

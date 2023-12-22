@@ -25,7 +25,7 @@ app.use(cors({
 }));
 
 //Database Connection & Backend Express.js Server
-database();
+database(app);
 
 //Upload Images
 imageUpload(app);
