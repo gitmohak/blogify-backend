@@ -24,13 +24,13 @@ app.use(cors({
     credentials: true
 }));
 
+//Database Connection
+database();
+
 //Backend Express.js Server
 app.listen(process.env.PORT, () => {
     console.log(`Server started successfully at port - ${process.env.PORT}`);
 });
-
-//Database Connection
-database();
 
 //Upload Images
 imageUpload(app);
@@ -45,6 +45,7 @@ app.use(errorMiddleware);
 //Uploaded Images are in Public Folder
 app.use("/uploaded-images", express.static(path.join(path.resolve(), "/uploaded-images")));
 
+//Backend Main Page
 app.get("/", (req, res) => {
     res.send("Welcome to The Blogify Backend API");
 });
